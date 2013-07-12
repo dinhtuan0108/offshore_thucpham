@@ -54,13 +54,23 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   <?php if ($logo) { ?>
   <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
   <?php } ?>
-  <?php echo $language; ?>
-  <?php echo $currency; ?>
-  <?php echo $cart; ?>
-  <div id="search">
-    <div class="button-search"></div>
-    <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+  <?php // echo $language; ?>
+  <?php // echo $currency; ?>
+  <?php // echo $cart; ?>
+  <div class="top">
+  	<?php if(isset($informations[4])) : ?>
+	<a href="<?php echo $informations[4]['href']; ?>"><?php echo $informations[4]['title']; ?></a>
+	|
+	<?php endif; ?>
+	<a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a>
+	|
+	<a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a>
   </div>
+  <div id="search">
+  	<input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+    <div class="button-search"></div>
+  </div>
+  <?php /*
   <div id="welcome">
     <?php if (!$logged) { ?>
     <?php echo $text_welcome; ?>
@@ -69,12 +79,16 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
     <?php } ?>
   </div>
   <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
+  */ ?>
 </div>
 <?php if ($categories) { ?>
 <div id="menu">
   <ul>
     <?php foreach ($categories as $category) { ?>
-    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+    <li class="<?php echo ($category == end($categories)) ? 'last' : '' ?>">
+		<a href="<?php echo $category['href']; ?>">
+			<?php echo $category['name']; ?>
+		</a>
       <?php if ($category['children']) { ?>
       <div>
         <?php for ($i = 0; $i < count($category['children']);) { ?>
