@@ -335,10 +335,11 @@ label {
 	height: 38px;
 	margin-bottom: 15px;
 	padding: 0px 5px;
+	
 }
 #menu ul {
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 }
 #menu > ul > li {
@@ -1663,4 +1664,77 @@ ul.box-filter > li ul {
 }
 .banner div img {
 	margin-bottom: 20px;
+}
+/*profile*/
+#profile {
+	border: 4px solid #fff;
+	background: url("../image/bg-footer.png") repeat-y 0 center;
+	height: 123px;
+	margin: 10px 0 15px 0;
+	overflow: hidden;
+}
+.profile-inner {
+	margin: -10px 5px;
+}
+ul.hotline{
+	width:165px;
+	height:124px;
+	background:url(../image/sp.png) no-repeat left top;
+	padding:0 0 0 120px;
+	list-style:none;
+	float:left;
+	color:#fff;
+	font-size:12px;
+}
+ul.support{
+	padding:5px 10px 0 95px;
+	width:242px;
+	height:115px;
+	list-style:none;
+	float:left;color:#fff;font-size:12px;background:url(../image/cup.png) no-repeat left 8px;}
+ul.support li {
+	padding-bottom:3px;
+}
+ul.support li.s1 {
+	padding:20px 0 10px 0;
+	font-size:17px;
+	font-weight:bold;
+}
+
+
+ul.support li.s2 {
+	line-height:18px;
+}
+ul.add {
+	width:245px;
+	height:119px;
+	list-style:none;
+	float:left;
+	color:#fff;
+	font-size:12px;
+	background:url(../image/watch.png) no-repeat left 8px;
+	padding-left:105px;
+}
+ul.add li.a1 {
+	padding:20px 0 10px 0;
+	font-size:13px;
+	font-weight:bold;
+}
+ul.add li.a2 {
+	padding-bottom:5px;
+}
+ul.add li.a3 {
+	padding-left:78px;
+}
+ul.hotline li {
+	width:170px;
+	float:left;
+}
+ul.hotline li.a {
+	 padding:25px 0 7px 0;
+	font-size:17px;
+	font-weight:bold;
+}
+ul.hotline li.b {
+	padding:6px 0 0 0;
 }

@@ -84,8 +84,16 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <?php if ($categories) { ?>
 <div id="menu">
   <ul>
+  	<li>
+		<a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
+	</li>
+	<?php if(isset($informations[4])) : ?>
+	<li>
+		<a href="<?php echo $informations[4]['href']; ?>"><?php echo $informations[4]['title']; ?></a>
+	</li>
+	<?php endif; ?>
     <?php foreach ($categories as $category) { ?>
-    <li class="<?php echo ($category == end($categories)) ? 'last' : '' ?>">
+    <li>
 		<a href="<?php echo $category['href']; ?>">
 			<?php echo $category['name']; ?>
 		</a>
@@ -93,10 +101,10 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
       <div>
         <?php for ($i = 0; $i < count($category['children']);) { ?>
         <ul>
-          <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
-          <?php for (; $i < $j; $i++) { ?>
-          <?php if (isset($category['children'][$i])) { ?>
-          <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
+			<?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
+			<?php for (; $i < $j; $i++) { ?>
+			<?php if (isset($category['children'][$i])) { ?>
+			<li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
           <?php } ?>
           <?php } ?>
         </ul>
@@ -105,7 +113,44 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
       <?php } ?>
     </li>
     <?php } ?>
+    <li class="last">
+		<a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a>
+	</li>
   </ul>
 </div>
 <?php } ?>
 <div id="notification"></div>
+<div id="profile">
+	<div class="profile-inner">
+		<ul class="hotline">
+			<li class="a">Hỗ trợ trực tuyến</li>
+			<li class="b">
+				Hotline 1: 
+				<span>0988xxxxxx</span>
+			</li>
+			<li class="b">
+				Hotline 2: 
+				<span>0988xxxxxx</span>
+			</li>
+		</ul>
+		<ul class="support">
+			<li class="s1">
+				Giới thiệu về chúng tôi
+			</li>
+			<li class="s2">
+				Nhập hàng chính hãng giá gốc, bảo hành chính hãng - Mặt bằng thuận tiện cho việc mua hàng
+			</li>
+		</ul>
+		<ul class="add">
+			<li class="a1">
+				Địa chỉ
+			</li>
+			<li class="a2">
+				Giờ làm việc : Sáng 8h00 - 12h00
+			</li>
+			<li class="a3">
+				Chiều 13h30 - 21h00
+			</li>
+		</ul>
+	</div>
+</div>
