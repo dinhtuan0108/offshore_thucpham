@@ -34,6 +34,19 @@ class ControllerCommonHeader extends Controller {
 		
 		$this->language->load('common/header');
 		
+		$this->load->model('catalog/information');
+		
+		$this->data['informations'] = array();
+
+		foreach ($this->model_catalog_information->getInformations() as $result) {
+			if ($result['bottom']) {
+				$this->data['informations'][$result['information_id']] = array(
+					'title' => $result['title'],
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				);
+			}
+    	}
+    	
 		$this->data['text_home'] = $this->language->get('text_home');
 		$this->data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
 		$this->data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
@@ -42,6 +55,9 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
 		$this->data['text_account'] = $this->language->get('text_account');
     	$this->data['text_checkout'] = $this->language->get('text_checkout');
+    	//added by duythanhdao@live.com
+    	$this->data['text_sitemap'] = $this->language->get('text_sitemap');
+    	$this->data['text_contact'] = $this->language->get('text_contact');
 				
 		$this->data['home'] = $this->url->link('common/home');
 		$this->data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
@@ -49,6 +65,9 @@ class ControllerCommonHeader extends Controller {
 		$this->data['account'] = $this->url->link('account/account', '', 'SSL');
 		$this->data['shopping_cart'] = $this->url->link('checkout/cart');
 		$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+		//added by duythanhdao@live.com
+		$this->data['sitemap'] = $this->url->link('information/sitemap');
+		$this->data['contact'] = $this->url->link('information/contact');
 		
 		// Daniel's robot detector
 		$status = true;
