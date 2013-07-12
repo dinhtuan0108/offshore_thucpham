@@ -4,12 +4,11 @@ html {
 	padding: 0;
 }
 body {
-	background-color: #ffffff;
+	background-color: #F0F0F0;
 	color: #000000;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
 	padding: 0px;
-	background: url('../image/dongho.png') repeat;
 }
 body, td, th, input, textarea, select, a {
 	font-size: 12px;
@@ -66,13 +65,13 @@ label {
 }
 /* layout */
 #container {
-	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
 }
 #content-wrapper {
-	background-color: #FFF;
+	width: 1000px;
+	margin: 10px auto;
 }
 #column-left {
 	float: left;
@@ -96,16 +95,20 @@ label {
 }
 /* header */
 #header {
+	width: 100%;
 	height: 120px;
 	padding-bottom: 4px;
 	position: relative;
 	z-index: 99;
 	background: url('../image/banner.png');
 }
+.header-inner {
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+}
 #header #logo {
-	position: absolute;
-	top: 11px;
-	left: 15px;
+	float: left;
 }
 #language {
 	position: absolute;
@@ -264,16 +267,14 @@ label {
 	text-align: center;
 }
 #header #search {
-	position: absolute;
-	top: 94px;
-	right: 120px;
+	float: right;
+	margin-top: 94px;
+	margin-right: -197px;
 	width: 298px;
 	z-index: 15;
 }
 #header .button-search {
-	position: absolute;
-	left: 230px;
-	top: 0;
+	float: left;
 	background: url('../image/search.png') center center no-repeat;
 	width: 55px;
 	height: 28px;
@@ -282,6 +283,7 @@ label {
 }
 #header #search input {
 	background: #EEE;
+	float: left;
 	padding: 1px;
 	width: 230px;
 	height: 24px;
@@ -344,6 +346,7 @@ label {
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
+	width: 1000px;
 }
 #menu > ul > li {
 	position: relative;
@@ -1615,17 +1618,21 @@ ul.box-filter > li ul {
 	width: 48%;
 }
 /* footer */ 
+.footer-wrapper {
+	width: 100%;
+	background: #FFF;
+	border-top: solid 5px #BAD34D;
+}
 #footer {
 	clear: both;
 	overflow: auto;
 	min-height: 100px;
-	padding: 20px;
-	border-top: 1px solid #DBDEE1;
-	border-bottom: 1px solid #DBDEE1;
-	background: #6a9912;
+	padding: 20px;	
+	width: 1000px;
+	margin: 0 auto;
 }
 #footer h3 {
-	color: #FFF;
+	color: #333;
 	font-size: 14px;
 	margin-top: 0px;
 	margin-bottom: 8px;
@@ -1646,17 +1653,17 @@ ul.box-filter > li ul {
 }
 #footer .column a {
 	text-decoration: none;
-	color: #FFF;
+	color: #333;
 }
 #footer .column a:hover {
 	text-decoration: underline;
 }
 #powered {
-	text-align: right;
+	text-align: center;
 	clear: both;
 	color: #FFF;
 	background-color: #000;
-	border-top: 1px solid #FFF;
+	border-top: solid 5px #BAD34D;
 	padding: 10px 5px;
 }
 /* banner */
@@ -1673,7 +1680,8 @@ ul.box-filter > li ul {
 	border: 4px solid #fff;
 	background: url("../image/bg-footer.png") repeat-y 0 center;
 	height: 123px;
-	margin: 10px 0 15px 0;
+	width: 992px;
+	margin: 10px auto;
 	overflow: hidden;
 }
 .profile-inner {
