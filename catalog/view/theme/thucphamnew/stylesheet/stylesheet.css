@@ -75,7 +75,7 @@ label {
 }
 #column-left {
 	float: left;
-	width: 180px;
+	width: 220px;
 }
 #column-left > div {
 	margin: 5px 5px 0px 5px;
@@ -88,7 +88,7 @@ label {
 	min-height: 400px;
 }
 #column-left + #column-right + #content, #column-left + #content {
-	margin-left: 195px;
+	margin-left: 225px;
 }
 #column-right + #content {
 	margin-right: 195px;
