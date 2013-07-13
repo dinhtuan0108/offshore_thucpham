@@ -1622,6 +1622,8 @@ ul.box-filter > li ul {
 	width: 100%;
 	background: #FFF;
 	border-top: solid 5px #BAD34D;
+	float: left;
+	margin-top: 20px;
 }
 #footer {
 	clear: both;
