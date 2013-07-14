@@ -16,8 +16,8 @@
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/thucpham3/stylesheet/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/thucpham3/stylesheet/stylesheet.css" />
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/thucpham3/stylesheet/bootstrap.min.css" />
 <?php foreach ($styles as $style) { ?>
 <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -52,109 +52,81 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <body>
 <div id="container">
 <div id="header">
-  <?php if ($logo) { ?>
-  <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
-  <?php } ?>
-  <?php // echo $language; ?>
-  <?php // echo $currency; ?>
-  <?php // echo $cart; ?>
-  <div class="top">
-  	<?php if(isset($informations[4])) : ?>
-	<a href="<?php echo $informations[4]['href']; ?>"><?php echo $informations[4]['title']; ?></a>
-	|
-	<?php endif; ?>
-	<a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a>
-	|
-	<a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a>
-  </div>
-  <div id="search">
-  	<input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
-    <div class="button-search"></div>
-  </div>
-  <?php /*
-  <div id="welcome">
-    <?php if (!$logged) { ?>
-    <?php echo $text_welcome; ?>
-    <?php } else { ?>
-    <?php echo $text_logged; ?>
-    <?php } ?>
-  </div>
-  <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
-  */ ?>
-</div>
-<?php if ($categories) { ?>
-<div id="menu">
-  <ul>
-  	<li>
-		<a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
-	</li>
-	<?php if(isset($informations[4])) : ?>
-	<li>
+	<div class="header-inner">
+		<div id="support">
+		</div>
+		<div id="logo">
+		  	<?php if ($logo) { ?>
+		  	
+			  	<a href="<?php echo $home; ?>">
+				  	<img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" />
+				</a>
+			<?php } ?>
+		</div>
+	  
+	  <?php // echo $language; ?>
+	  <?php // echo $currency; ?>
+	  <?php // echo $cart; ?>
+	  <div class="top">
+	  	<?php if(isset($informations[4])) : ?>
 		<a href="<?php echo $informations[4]['href']; ?>"><?php echo $informations[4]['title']; ?></a>
-	</li>
-	<?php endif; ?>
-    <?php foreach ($categories as $category) { ?>
-    <li>
-		<a href="<?php echo $category['href']; ?>">
-			<?php echo $category['name']; ?>
-		</a>
-      <?php if ($category['children']) { ?>
-      <div>
-        <?php for ($i = 0; $i < count($category['children']);) { ?>
-        <ul>
-			<?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
-			<?php for (; $i < $j; $i++) { ?>
-			<?php if (isset($category['children'][$i])) { ?>
-			<li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
-          <?php } ?>
-          <?php } ?>
-        </ul>
-        <?php } ?>
-      </div>
-      <?php } ?>
-    </li>
-    <?php } ?>
-    <li>
-		<a href="#">Tin tức</a>
-	</li>
-    <li class="last">
+		|
+		<?php endif; ?>
 		<a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a>
-	</li>
-  </ul>
-</div>
-<?php } ?>
-<div id="notification"></div>
-<div id="profile">
-	<div class="profile-inner">
-		<ul class="hotline">
-			<li class="a">Hỗ trợ trực tuyến</li>
-			<li class="b">
-				Hotline 1: 
-				<span>0988xxxxxx</span>
-			</li>
-			<li class="b">
-				Hotline 2: 
-				<span>0988xxxxxx</span>
-			</li>
-		</ul>
-		<ul class="support">
-			<li class="s1">
-				Giới thiệu về chúng tôi
-			</li>
-			<li class="s2">
-				Nhập hàng chính hãng giá gốc, bảo hành chính hãng - Mặt bằng thuận tiện cho việc mua hàng
-			</li>
-		</ul>
-		<ul class="add">
-			<li class="a1">
-				Địa chỉ
-			</li>
-			<li class="a2">
-				Giờ làm việc : Sáng 8h00 - 12h00
-			</li>
-			<li class="a3">
-				Chiều 13h30 - 21h00
-			</li>
-		</ul>
+		|
+		<a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a>
+	  </div>
+	  
+	  <?php /*
+	  <div id="welcome">
+	    <?php if (!$logged) { ?>
+	    <?php echo $text_welcome; ?>
+	    <?php } else { ?>
+	    <?php echo $text_logged; ?>
+	    <?php } ?>
+	  </div>
+	  <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
+	  */ ?>
+	  
+		<?php if ($categories) { ?>
+		<div id="menu">
+			<div style="width: 1000px; float: left;">
+				<div id="search">
+					<input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+					<div class="button-search">Tìm</div>
+				</div>			
+			</div>
+			<div style=" position: absolute; width: 1000px; float: left; margin-top: 40px;">
+				<ul>
+				<?php foreach ($categories as $category) { ?>
+					<li class="<?php echo ($category == $categories[2]) ? 'right' : '' ?>">
+						<a href="<?php echo $category['href']; ?>">
+							<?php echo $category['name']; ?>
+						</a>
+					  <?php if ($category['children']) { ?>
+					  <div>
+					    <?php for ($i = 0; $i < count($category['children']);) { ?>
+					    <ul>
+							<?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
+							<?php for (; $i < $j; $i++) { ?>
+							<?php if (isset($category['children'][$i])) { ?>
+							<li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
+					      <?php } ?>
+					      <?php } ?>
+					    </ul>
+					    <?php } ?>
+					  </div>
+					  <?php } ?>
+					</li>
+					<?php } ?>
+				</ul>			
+			
+			
+			</div>
+
+		</div>	  
 	</div>
 </div>
+
+<?php } ?>
+<div id="notification"></div>

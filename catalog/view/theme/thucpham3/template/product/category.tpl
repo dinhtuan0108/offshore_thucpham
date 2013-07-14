@@ -95,8 +95,8 @@
 	      <div class="cart">
 	        <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
 	      </div>
-	      <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
-	      <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div>
+	      <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');" title="<?php echo $button_wishlist; ?>"></a></div>
+	      <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');" title="<?php echo $button_compare; ?>"></a></div>
 	    </div>
 	    <?php } ?>
 	  </div>
@@ -158,17 +158,22 @@
 			$('.product-grid > div').each(function(index, element) {
 				html = '';
 				
+				html += '<div class="name">' + $(element).find('.name').html() + '</div>';
+				html += '<div class="description">' + $(element).find('.description').html() + '</div>';
+				
 				var image = $(element).find('.image').html();
 				
 				if (image != null) {
 					html += '<div class="image">' + image + '</div>';
 				}
 				
-				html += '<div class="name">' + $(element).find('.name').html() + '</div>';
-				html += '<div class="description">' + $(element).find('.description').html() + '</div>';
+				
+				
 				
 				var price = $(element).find('.price').html();
 				
+				html += '<div class="grid-bottom">';
+			 	
 				if (price != null) {
 					html += '<div class="price">' + price  + '</div>';
 				}
@@ -182,7 +187,7 @@
 				html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
 				html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
 				html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
-				
+				html += '</div>';
 				$(element).html(html);
 			});	
 						

@@ -34,6 +34,9 @@ class ControllerCommonSeoUrl extends Controller {
 					
 					if ($url[0] == 'information_id') {
 						$this->request->get['information_id'] = $url[1];
+					}
+					if ($url[0] == 'news_id') {
+						$this->request->get['news_id'] = $url[1];
 					}	
 				} else {
 					$this->request->get['route'] = 'error/not_found';	
@@ -48,8 +51,9 @@ class ControllerCommonSeoUrl extends Controller {
 				$this->request->get['route'] = 'product/manufacturer/info';
 			} elseif (isset($this->request->get['information_id'])) {
 				$this->request->get['route'] = 'information/information';
+			}elseif (isset($this->request->get['news_id'])) {
+				$this->request->get['route'] = 'product/news';
 			}
-			
 			if (isset($this->request->get['route'])) {
 				return $this->forward($this->request->get['route']);
 			}
