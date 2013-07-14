@@ -28,9 +28,9 @@ class ControllerCommonColumnRight extends Controller {
 			$layout_id = $this->model_catalog_information->getInformationLayoutId($this->request->get['information_id']);
 		}
 		if ($route == 'product/news' && isset($this->request->get['news_id'])) {
-			$layout_id = $this->model_catalog_news->getnewsLayoutId($this->request->get['news_id']);;
+			$layout_id = $this->model_catalog_news->getnewsLayoutId($this->request->get['news_id']);		
 		}
-		
+				
 		if (!$layout_id) {
 			$layout_id = $this->model_design_layout->getLayout($route);
 		}
@@ -44,10 +44,9 @@ class ControllerCommonColumnRight extends Controller {
 		$this->load->model('setting/extension');
 		
 		$extensions = $this->model_setting_extension->getExtensions('module');		
-		
+
 		foreach ($extensions as $extension) {
 			$modules = $this->config->get($extension['code'] . '_module');
-			
 			if ($modules) {
 				foreach ($modules as $module) {
 					if ($module['layout_id'] == $layout_id && $module['position'] == 'column_right' && $module['status']) {

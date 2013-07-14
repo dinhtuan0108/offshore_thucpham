@@ -48,7 +48,7 @@ class ControllerModulenews extends Controller {
 				'news_id' => $news['news_id'],
 				'name'        => $news['name'],
 				'children'    => $children_data,
-				'href'        => $this->url->link('product/news', 'path=' . $news['news_id'])
+				'href'        => $this->url->link('product/news', 'news_id=' . $news['news_id'])
 			);
 		}
 		

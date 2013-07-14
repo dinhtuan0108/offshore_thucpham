@@ -10,7 +10,20 @@ class ControllerModulenews extends Controller {
 		$this->load->model('setting/setting');
 				
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && ($this->validate())) {
-			$this->model_setting_setting->editSetting('news', $this->request->post);		
+			$data = $this->request->post;
+			$saveData = array(
+				'news_module' => array()
+			);
+			$modules = explode(',', $data['news_module']);
+			foreach ($modules as $module){
+				$saveData['news_module'][] = array(
+					'layout_id' => $data['news_' . $module . '_layout_id'],
+					'position' => $data['news_' . $module . '_position'],
+					'status' => $data['news_' . $module . '_status'],
+					'sort_order' => $data['news_' . $module . '_sort_order'],
+				);
+			}
+			$this->model_setting_setting->editSetting('news', $saveData);		
 					
 			$this->session->data['success'] = $this->language->get('text_success');
 						
