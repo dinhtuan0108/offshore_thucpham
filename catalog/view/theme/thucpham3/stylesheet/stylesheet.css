@@ -1825,3 +1825,32 @@ ul.hotline li.a {
 ul.hotline li.b {
 	padding:6px 0 0 0;
 }
+
+/*********News**********/
+.news {
+	width: 100%;
+	float: left;
+}
+.news + .news {
+	border-top: 1px dotted #333;
+}
+.news h5 {
+	margin-bottom: 0px;
+}
+.news-date {
+	font-style: italic;
+}
+.news-image {
+	width: 80px;
+	min-height: 80px;
+	float: left;
+	margin-top: 16px;
+}
+.news-image img {
+	max-width: 80px;
+}
+.news-content {
+	float: left;
+	margin-left: 10px;
+	width: 640px;
+}

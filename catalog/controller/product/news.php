@@ -40,7 +40,11 @@ class ControllerProductNews extends Controller {
 			'href'      => $this->url->link('common/home'),
        		'separator' => false
    		);	
-			
+		$this->data['breadcrumbs'][] = array(
+       		'text'      => $this->language->get($this->language->get('text_news')),
+			'href'      => $this->url->link('news/news'),
+       		'separator' => $this->language->get('text_separator')
+   		);			
 		if (isset($this->request->get['news_id'])) {
 			$path = '';
 		
