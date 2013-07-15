@@ -31,10 +31,10 @@ $_['entry_shared']            = 'Chia sẻ';
 $_['entry_product_count']     = 'Hiển thị số product';
 $_['entry_voucher_min']               = 'Voucher ít nhất';
 $_['entry_voucher_max']               = 'Voucher nhiều nhất';
-$_['entry_vat']               = 'Nhập VAT';
-$_['entry_customer_group_display']            = 'Hiển thị tên nhóm khách hàng';
-$_['entry_customer_online']            = 'Hiển thị thông tin khách hàng online';
-$_['text_report_customer_online']            = 'Báo cáo khách hàng online';
+$_['entry_vat']               		  = 'Nhập VAT';
+$_['entry_customer_group_display']    = 'Hiển thị tên nhóm khách hàng';
+$_['entry_customer_online']           = 'Hiển thị thông tin khách hàng online';
+$_['text_report_customer_online']     = 'Báo cáo khách hàng online';
 
 
 
