@@ -25,6 +25,11 @@ class ModelCatalogInformation extends Model {
 				
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'information_id=" . (int)$information_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+		} else {
+			$this->load->model('catalog/seo');
+			$language_id = (int)$this->config->get('config_language_id');
+			$title = $this->db->escape($data['information_description'][$language_id]['title']);
+			$this->model_catalog_seo->saveSeoUrl($information_id, $title, 'information_id');
 		}
 		
 		$this->cache->delete('information');
@@ -61,6 +66,11 @@ class ModelCatalogInformation extends Model {
 		
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'information_id=" . (int)$information_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+		} else {
+			$this->load->model('catalog/seo');
+			$language_id = (int)$this->config->get('config_language_id');
+			$title = $this->db->escape($data['information_description'][$language_id]['title']);
+			$this->model_catalog_seo->saveSeoUrl($information_id, $title, 'information_id');
 		}
 		
 		$this->cache->delete('information');

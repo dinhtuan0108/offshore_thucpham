@@ -29,6 +29,11 @@ class ModelCatalogNews extends Model {
 						
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'news_id=" . (int)$news_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+		} else {
+			$this->load->model('catalog/seo');
+			$language_id = (int)$this->config->get('config_language_id');
+			$title = $this->db->escape($data['news_description'][$language_id]['name']);
+			$this->model_catalog_seo->saveSeoUrl($news_id, $title, 'news_id');
 		}
 		
 		$this->cache->delete('news');
@@ -69,6 +74,11 @@ class ModelCatalogNews extends Model {
 		
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'news_id=" . (int)$news_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+		} else {
+			$this->load->model('catalog/seo');
+			$language_id = (int)$this->config->get('config_language_id');
+			$title = $this->db->escape($data['news_description'][$language_id]['name']);
+			$this->model_catalog_seo->saveSeoUrl($news_id, $title, 'news_id');
 		}
 		
 		$this->cache->delete('news');
