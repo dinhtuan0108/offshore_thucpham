@@ -24,6 +24,7 @@ $_['text_error_log']        = 'Lịch sử lỗi';
 $_['text_extension']        = 'Phần mở rộng';
 $_['text_feed']             = 'Dữ liệu sản phẩm';
 $_['text_front']            = 'Xem cửa hàng';
+$_['text_filter']			= 'Bộ lọc';
 $_['text_geo_zone']         = 'Vùng địa lý';
 $_['text_help']             = 'Trợ giúp';
 $_['text_information']      = 'Thông tin';
