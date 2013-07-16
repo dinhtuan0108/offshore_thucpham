@@ -5,6 +5,7 @@
 <?php if ($error_warning) { ?>
 <div class="warning"><?php echo $error_warning; ?></div>
 <?php } ?>
+<div id="content-wrapper">
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <div class="breadcrumb">
@@ -50,5 +51,6 @@ $('#login input').keydown(function(e) {
 		$('#login').submit();
 	}
 });
-//--></script> 
+//--></script>
+</div>
 <?php echo $footer; ?>

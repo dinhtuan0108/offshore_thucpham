@@ -14,11 +14,11 @@
 	    <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" /></div>
 	    <?php } ?>
 	    <?php if ($description) { ?>
-	    <?php echo $description; ?>
+	    <?php // echo $description; ?>
 	    <?php } ?>
 	  </div>
 	  <?php } ?>
-	  <?php if ($categories) { ?>
+	  <?php if (0 && $categories) { ?>
 	  <h2><?php echo $text_refine; ?></h2>
 	  <div class="category-list">
 	    <?php if (count($categories) <= 5) { ?>
@@ -42,31 +42,43 @@
 	  </div>
 	  <?php } ?>
 	  <?php if ($products) { ?>
-	  <div class="product-filter">
-	    <div class="display"><b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display('grid');"><?php echo $text_grid; ?></a></div>
-	    <div class="limit"><b><?php echo $text_limit; ?></b>
-	      <select onchange="location = this.value;">
-	        <?php foreach ($limits as $limits) { ?>
-	        <?php if ($limits['value'] == $limit) { ?>
-	        <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
-	        <?php } else { ?>
-	        <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
-	        <?php } ?>
-	        <?php } ?>
-	      </select>
-	    </div>
-	    <div class="sort"><b><?php echo $text_sort; ?></b>
-	      <select onchange="location = this.value;">
-	        <?php foreach ($sorts as $sorts) { ?>
-	        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-	        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-	        <?php } else { ?>
-	        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-	        <?php } ?>
-	        <?php } ?>
-	      </select>
-	    </div>
-	  </div>
+		<div class="product-filter">
+			<div class="toolbar">
+				<div class="pager">
+					<div class="limit pull-right"><b><?php echo $text_limit; ?></b>
+						<select onchange="location = this.value;">
+						<?php foreach ($limits as $limits) { ?>
+						<?php if ($limits['value'] == $limit) { ?>
+						<option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
+						<?php } else { ?>
+						<option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
+						<?php } ?>
+						<?php } ?>
+						</select>
+					</div>				
+				</div>
+				<div class="sorter">
+					<div class="pull-left">
+						<div class="display">
+							<span class="list-button"></span>
+							<a onclick="display('grid');" class="grid-button" title="<?php echo $text_grid ?>"></a>
+						</div>
+					</div>
+					<div class="sort pull-right"><b><?php echo $text_sort; ?></b>
+						<select onchange="location = this.value;">
+						<?php foreach ($sorts as $sorts) { ?>
+							<?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+									<option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
+								<?php } else { ?>
+									<option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+								<?php } ?>
+							<?php } ?>
+						</select>
+					</div>				
+				</div>
+			</div>
+		</div>
+		<div class="pagination"><?php echo $pagination; ?></div>
 	  <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
 	  <div class="product-list">
 	    <?php foreach ($products as $product) { ?>
@@ -102,6 +114,7 @@
 	  </div>
 	  <div class="pagination"><?php echo $pagination; ?></div>
 	  <?php } ?>
+	  
 	  <?php if (!$categories && !$products) { ?>
 	  <div class="content"><?php echo $text_empty; ?></div>
 	  <div class="buttons">
@@ -149,7 +162,7 @@
 				$(element).html(html);
 			});		
 			
-			$('.display').html('<b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display(\'grid\');"><?php echo $text_grid; ?></a>');
+			$('.display').html('<span class="list-button"></span><a onclick="display(\'grid\');" title="<?php echo $text_grid ?>" class="grid-button"></a>');
 			
 			$.totalStorage('display', 'list'); 
 		} else {
@@ -191,7 +204,7 @@
 				$(element).html(html);
 			});	
 						
-			$('.display').html('<b><?php echo $text_display; ?></b> <a onclick="display(\'list\');"><?php echo $text_list; ?></a> <b>/</b> <?php echo $text_grid; ?>');
+			$('.display').html('<a onclick="display(\'list\');" class="list-button" title="<?php echo $text_list ?>"></a><span class="grid-button"></span>');
 			
 			$.totalStorage('display', 'grid');
 		}

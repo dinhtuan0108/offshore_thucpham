@@ -55,6 +55,9 @@
 	            <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
 	          </ul>
 	        </li>
+	        <li>
+				<a href="<?php echo $news ?>"><?php echo $text_news ?></a>
+			</li>
 	      </ul>
 	    </div>
 	  </div>

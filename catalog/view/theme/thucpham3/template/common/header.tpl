@@ -68,6 +68,8 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 	  <?php // echo $currency; ?>
 	  <?php // echo $cart; ?>
 	  <div class="top">
+	  	<a href="<?php echo $news ?>"><?php echo $text_news ?></a>
+	  	|
 	  	<?php if(isset($informations[4])) : ?>
 		<a href="<?php echo $informations[4]['href']; ?>"><?php echo $informations[4]['title']; ?></a>
 		|

@@ -17,6 +17,11 @@ class ModelCatalogManufacturer extends Model {
 				
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+		} else {
+			$this->load->model('catalog/seo');
+			$language_id = (int)$this->config->get('config_language_id');
+			$title = $this->db->escape($data['name']);
+			$this->model_catalog_seo->categorySeoUrl($manufacturer_id, $title, 'manufacturer_id');
 		}
 		
 		$this->cache->delete('manufacturer');
@@ -41,6 +46,11 @@ class ModelCatalogManufacturer extends Model {
 		
 		if ($data['keyword']) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
+		} else {
+			$this->load->model('catalog/seo');
+			$language_id = (int)$this->config->get('config_language_id');
+			$title = $this->db->escape($data['name']);
+			$this->model_catalog_seo->categorySeoUrl($manufacturer_id, $title, 'manufacturer_id');
 		}
 		
 		$this->cache->delete('manufacturer');

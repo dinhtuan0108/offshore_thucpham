@@ -37,7 +37,14 @@ class ControllerCommonSeoUrl extends Controller {
 					}
 					if ($url[0] == 'news_id') {
 						$this->request->get['news_id'] = $url[1];
-					}	
+					}
+					
+					
+					$explodedUrl = explode('/', $query->row['query']);
+					if(count($explodedUrl) > 1){
+						$this->request->get['route'] = $query->row['query'];
+					}
+					
 				} else {
 					$this->request->get['route'] = 'error/not_found';	
 				}
@@ -69,9 +76,14 @@ class ControllerCommonSeoUrl extends Controller {
 		
 		parse_str($url_info['query'], $data);
 		foreach ($data as $key => $value) {
-			
 			if (isset($data['route'])) {
-				if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id') || ($data['route'] == 'product/news' && $key == 'news_id')) {
+				$route = array(
+					'product/product' => 'product_id',
+					'information/information' => 'information_id',
+					'product/news' => 'news_id',
+					'product/manufacturer/info' => 'manufacturer_id',
+				);
+				if ((key_exists($data['route'], $route) && $key == $route[$data['route']]) || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id')) {
 					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = '" . $this->db->escape($key . '=' . (int)$value) . "'");
 					if ($query->num_rows) {
 						$url .= '/' . $query->row['keyword'];
@@ -92,8 +104,22 @@ class ControllerCommonSeoUrl extends Controller {
 					unset($data[$key]);
 				}
 			}
+			
+			//custom url
+			if (isset($data['route'])){
+				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = '" . $this->db->escape($data['route']) . "'");
+				if ($query->num_rows) {
+					$url .= '/' . $query->row['keyword'];
+					unset($data[$key]);
+				}				
+			}
+			
+			
+			
 		}
-	
+		
+
+		
 		if ($url) {
 			unset($data['route']);
 		

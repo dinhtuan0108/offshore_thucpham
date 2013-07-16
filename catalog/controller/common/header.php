@@ -58,6 +58,7 @@ class ControllerCommonHeader extends Controller {
     	//added by duythanhdao@live.com
     	$this->data['text_sitemap'] = $this->language->get('text_sitemap');
     	$this->data['text_contact'] = $this->language->get('text_contact');
+    	$this->data['text_news'] = $this->language->get('text_news');
 				
 		$this->data['home'] = $this->url->link('common/home');
 		$this->data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
@@ -68,6 +69,7 @@ class ControllerCommonHeader extends Controller {
 		//added by duythanhdao@live.com
 		$this->data['sitemap'] = $this->url->link('information/sitemap');
 		$this->data['contact'] = $this->url->link('information/contact');
+		$this->data['news'] = $this->url->link('news/news');
 		
 		// Daniel's robot detector
 		$status = true;

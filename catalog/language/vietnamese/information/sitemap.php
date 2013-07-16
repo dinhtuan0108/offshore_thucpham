@@ -15,4 +15,5 @@ $_['text_checkout']    = 'Thanh toán';
 $_['text_search']      = 'Tìm kiếm';
 $_['text_information'] = 'Thông tin ';
 $_['text_contact']     = 'Liên hệ';
+$_['text_news']			= 'Tin tức';
 ?>
