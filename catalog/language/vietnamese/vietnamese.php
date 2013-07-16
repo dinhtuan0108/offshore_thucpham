@@ -17,8 +17,9 @@ $_['text_select']           = ' --- Chọn --- ';
 $_['text_all_zones']        = 'Tất cả các khu vực';
 $_['text_pagination']       = 'Hiển thị {start} đến {end} trong {total} ({pages} Trang)';
 $_['text_separator']        = ' &raquo; ';
-
+$_['text_filter'] = 'Bộ lọc';
 // Buttons
+$_['button_repair']    = 'Refresh';
 $_['button_add_address']    = 'Thêm địa chỉ';
 $_['button_back']           = 'Quay lại';
 $_['button_continue']       = 'Tiếp tục';

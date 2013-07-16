@@ -1040,25 +1040,57 @@ class ControllerCatalogProduct extends Controller {
 		// Attributes
 		$this->load->model('catalog/attribute');
 		
+		//Get "General" attribute group by id
+		//dinhtuan0108@gmail.com
+			$data = array(
+				'filter_attribute_group_id' => 7,
+				'start'       => 0,
+				'limit'       => 20
+			);
+			
+			$json = array();
+			
+			$results = $this->model_catalog_attribute->getAttributes($data);
+			
+			foreach ($results as $result) {
+				$json[] = array(
+					'attribute_id'    => $result['attribute_id'], 
+					'name'            => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')),
+					'attribute_group' => $result['attribute_group']
+				);		
+			}		
 		if (isset($this->request->post['product_attribute'])) {
 			$product_attributes = $this->request->post['product_attribute'];
 		} elseif (isset($this->request->get['product_id'])) {
 			$product_attributes = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 		} else {
-			$product_attributes = array();
+			$product_attributes = $json;
 		}
+		
+		
+		
 		
 		$this->data['product_attributes'] = array();
 		
 		foreach ($product_attributes as $product_attribute) {
 			$attribute_info = $this->model_catalog_attribute->getAttribute($product_attribute['attribute_id']);
 			
+			if(isset($product_attribute['product_attribute_description']))
+			{
+				if ($attribute_info) {
+					$this->data['product_attributes'][] = array(
+						'attribute_id'                  => $product_attribute['attribute_id'],
+						'name'                          => $attribute_info['name'],
+						'product_attribute_description' => $product_attribute['product_attribute_description']
+					);
+				}
+			}else{
 			if ($attribute_info) {
-				$this->data['product_attributes'][] = array(
-					'attribute_id'                  => $product_attribute['attribute_id'],
-					'name'                          => $attribute_info['name'],
-					'product_attribute_description' => $product_attribute['product_attribute_description']
-				);
+					$this->data['product_attributes'][] = array(
+						'attribute_id'                  => $product_attribute['attribute_id'],
+						'name'                          => $attribute_info['name'],
+					);
+				}
 			}
 		}		
 		

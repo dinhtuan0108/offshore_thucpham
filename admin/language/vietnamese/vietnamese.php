@@ -26,8 +26,20 @@ $_['text_separator']          = ' &gt; ';
 $_['text_edit']               = 'Sửa';
 $_['text_view']               = 'Xem';
 $_['text_home']               = 'Trang chủ';
+$_['entry_secure']            = 'Bảo mật';
+$_['entry_shared']            = 'Chia sẻ';
+$_['entry_product_count']     = 'Hiển thị số product';
+$_['entry_voucher_min']               = 'Voucher ít nhất';
+$_['entry_voucher_max']               = 'Voucher nhiều nhất';
+$_['entry_vat']               		  = 'Nhập VAT';
+$_['entry_customer_group_display']    = 'Hiển thị tên nhóm khách hàng';
+$_['entry_customer_online']           = 'Hiển thị thông tin khách hàng online';
+$_['text_report_customer_online']     = 'Báo cáo khách hàng online';
+
+
 
 // Button
+$_['button_repair']    = 'Refresh';
 $_['button_add_address']      = 'Thêm Địa chỉ';
 $_['button_add_attribute']    = 'Thêm thuộc tính';
 $_['button_add_banner']       = 'Thêm Banner';
@@ -88,6 +100,7 @@ $_['button_write']            = 'Viết bình luận';
 
 
 // Tab
+$_['tab_ftp']             = 'Cấu hình FTP';
 $_['tab_address']             = 'Địa chỉ';
 $_['tab_admin']               = 'Quản trị';
 $_['tab_attribute']           = 'Thuộc tính';
