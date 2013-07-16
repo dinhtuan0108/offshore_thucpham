@@ -82,7 +82,8 @@ class ControllerModulenews extends Controller {
 		if (isset($this->request->post['news_module'])) {
 			$modules = explode(',', $this->request->post['news_module']);
 		} elseif ($this->config->get('news_module') != '') {
-			$modules = explode(',', $this->config->get('news_module'));
+			//$modules = explode(',', $this->config->get('news_module'));
+			$modules = $this->config->get('news_module');
 		} else {
 			$modules = array();
 		}		
@@ -91,32 +92,32 @@ class ControllerModulenews extends Controller {
 		
 		$this->data['layouts'] = $this->model_design_layout->getLayouts();
 				
-		foreach ($modules as $module) {
+		foreach ($modules as $module => $value) {
 			if (isset($this->request->post['news_' . $module . '_layout_id'])) {
 				$this->data['news_' . $module . '_layout_id'] = $this->request->post['news_' . $module . '_layout_id'];
 			} else {
-				$this->data['news_' . $module . '_layout_id'] = $this->config->get('news_' . $module . '_layout_id');
+				$this->data['news_' . $module . '_layout_id'] = $value['layout_id'];
 			}	
 			
 			if (isset($this->request->post['news_' . $module . '_position'])) {
 				$this->data['news_' . $module . '_position'] = $this->request->post['news_' . $module . '_position'];
 			} else {
-				$this->data['news_' . $module . '_position'] = $this->config->get('news_' . $module . '_position');
+				$this->data['news_' . $module . '_position'] = $value['position'];
 			}	
 			
 			if (isset($this->request->post['news_' . $module . '_status'])) {
 				$this->data['news_' . $module . '_status'] = $this->request->post['news_' . $module . '_status'];
 			} else {
-				$this->data['news_' . $module . '_status'] = $this->config->get('news_' . $module . '_status');
+				$this->data['news_' . $module . '_status'] = $value['status'];
 			}	
 						
 			if (isset($this->request->post['news_' . $module . '_sort_order'])) {
-				$this->data['news_' . $module . '_sort_order'] = $this->request->post['news_' . $module . '_sort_order'];
+				$this->data['news_' . $module . 'sort_order'] = $this->request->post['news_' . $module . '_sort_order'];
 			} else {
-				$this->data['news_' . $module . '_sort_order'] = $this->config->get('news_' . $module . '_sort_order');
+				$this->data['news_' . $module . 'sort_order'] = $value['sort_order'];
 			}				
 		}
-		
+	 
 		$this->data['modules'] = $modules;
 		
 		if (isset($this->request->post['news_module'])) {

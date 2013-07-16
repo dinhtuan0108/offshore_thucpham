@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <?php $module_row = 0; ?>
-        <?php foreach ($modules as $module) { ?>
+        <?php foreach ($modules as $module => $value) { ?>
         <tbody id="module-row<?php echo $module_row; ?>">
           <tr>
             <td class="left"><select name="news_<?php echo $module_row; ?>_layout_id">
@@ -69,7 +69,7 @@
                 <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
                 <?php } ?>
               </select></td>
-            <td class="right"><input type="text" name="news_<?php echo $module_row; ?>_sort_order" value="<?php echo ${'news_' . $module . '_sort_order'}; ?>" size="3" /></td>
+            <td class="right"><input type="text" name="news_<?php echo $module_row; ?>_sort_order" value="<?php echo ${'news_' . $module . 'sort_order'}; ?>" size="3" /></td>
             <td class="left"><a onclick="$('#module-row<?php echo $module_row; ?>').remove();" class="button"><span><?php echo $button_remove; ?></span></a></td>
           </tr>
         </tbody>

@@ -99,14 +99,15 @@ label {
 #content > div, #content > h1 {
 	margin: 10px;	
 }
+
 /* header */
 #header {
 	width: 100%;
-	height: 150px;
+	height: 148px;
 	padding-bottom: 4px;
 	position: relative;
 	z-index: 99;
-	background: url('../image/banner.png');
+	background: url('../image/header_bg.png');
 }
 .header-inner {
 	width: 1000px;
@@ -1804,9 +1805,9 @@ span.grid-button, a.grid-button:hover {
 }
 /* banner */
 .banner {
-	border: 1px solid #EDEDED;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	margin-top: 0px !important;
 }
 .banner div {
 	text-align: center;
@@ -1923,4 +1924,26 @@ ul.hotline li.b {
 #notification {
 	margin: 40px auto;
 	width: 1000px;
+}
+/*home page*/
+.content-top {
+	width: 100%;
+	background-color: #F0F0F0;
+	height: 425px;
+	margin-top: -40px;
+	padding-top: 40px;
+}
+.content-top > div, .content-bottom > div {
+	width: 1024px;
+	margin: 0 auto;
+}
+.content-top #column-left {
+	width: 250px ;
+}
+.content-bottom {
+	width: 100%;
+	height: auto;
+}
+.content-bottom .box-heading, .content-bottom .box-content {
+	border: none;
 }
