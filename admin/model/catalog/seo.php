@@ -15,8 +15,10 @@ class ModelCatalogSeo extends Model {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = '$field=" . (int)$id . "', keyword = '" . $this->db->escape($title) . "'");
 	}	
 	function convert($str) {
-		$str = trim(strtolower($str));
+		
 		$str = html_entity_decode($str);
+	 	$str = mb_convert_case($str,MB_CASE_TITLE,'utf-8');
+	 	$str = trim(strtolower($str));
 		$str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", 'a', $str);
 		$str = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", 'e', $str);
 		$str = preg_replace("/(ì|í|ị|ỉ|ĩ)/", 'i', $str);
