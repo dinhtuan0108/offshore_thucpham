@@ -1,4 +1,6 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
+<?php echo $header; ?>
+<div id="content-wrapper">
+<?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <div class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -162,5 +164,6 @@ $('select[name=\'country_id\']').bind('change', function() {
 });
 
 $('select[name=\'country_id\']').trigger('change');
-//--></script> 
+//--></script>
+</div> 
 <?php echo $footer; ?>

@@ -8,6 +8,7 @@
 <?php if ($error_warning) { ?>
 <div class="warning"><?php echo $error_warning; ?><img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>
 <?php } ?>
+<div id="content-wrapper">
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <div class="breadcrumb">
@@ -348,4 +349,5 @@ $('select[name=\'country_id\']').bind('change', function() {
 $('select[name=\'country_id\']').trigger('change');
 //--></script>
 <?php } ?>
+</div>
 <?php echo $footer; ?>

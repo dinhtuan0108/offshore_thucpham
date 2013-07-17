@@ -2,6 +2,7 @@
 <?php if ($success) { ?>
 <div class="success"><?php echo $success; ?></div>
 <?php } ?>
+<div id="content-wrapper">
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <div class="breadcrumb">
@@ -38,4 +39,5 @@
     </ul>
   </div>
   <?php echo $content_bottom; ?></div>
+</div>
 <?php echo $footer; ?> 
