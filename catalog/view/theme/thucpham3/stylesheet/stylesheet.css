@@ -111,8 +111,9 @@ label {
 }
 .header-inner {
 	width: 1000px;
-	height: auto;
+	height: 148px;
 	margin: 0 auto;
+	background: url('../image/banner5.png');
 }
 #header #support {
 	width: 256px;
@@ -159,24 +160,28 @@ label {
 	color: #000;
 	text-decoration: none;
 }
+.cart-wrapper {
+	float: left;
+	margin-left: 120px;
+	width: 250px;
+	height: 60px;
+}
 #header #cart {
-	position: absolute;
+	position: static;
 	top: 0px;
-	right: 145px;
+	right: 0px;
 	z-index: 9;
-	min-width: 300px;
+	width: 250px;
+	height: auto;
 }
 #header #cart .heading {
-	float: right;
-	margin-right: 172px;
+	float: left;
 	margin-top: 15px;
 	padding-left: 14px;
 	padding-right: 14px;
-	border-top: 1px solid #FFFFFF;
-	border-left: 1px solid #FFFFFF;
-	border-right: 1px solid #EEEEEE;
-	background: #FFF;
+	background: rgba(255, 255, 255, 0.3);
 	position: relative;
+	border-radius: 3px 3px 0px 0px;
 	z-index: 1;
 }
 #header #cart .heading h4 {
@@ -191,7 +196,7 @@ label {
 	text-decoration: none;
 }
 #header #cart .heading a span {
-	background: #FFFFFF url('../image/arrow-down.png') 100% 50% no-repeat;
+	background: transparent url('../image/arrow-down.png') 100% 50% no-repeat;
 	padding-right: 15px;
 }
 #header #cart .content {
@@ -205,26 +210,21 @@ label {
 	border-left: 1px solid #EEEEEE;
 	border-right: 1px solid #EEEEEE;
 	border-bottom: 1px solid #EEEEEE;
-	-webkit-border-radius: 0px 7px 7px 7px;
-	-moz-border-radius: 0px 7px 7px 7px;
-	-khtml-border-radius: 0px 7px 7px 7px;
-	border-radius: 0px 7px 7px 7px;
-	-webkit-box-shadow: 0px 2px 2px #DDDDDD;
-	-moz-box-shadow: 0px 2px 2px #DDDDDD;
-	box-shadow: 0px 2px 2px #DDDDDD;
-	background: #FFF;
+	-webkit-border-radius: 0px 3px 3px 3px;
+	-moz-border-radius: 0px 3px 3px 3px;
+	-khtml-border-radius: 0px 3px 3px 3px;
+	border-radius: 0px 3px 3px 3px;
+	background: rgba(255, 255, 255, 0.3);
 }
 #header #cart.active .heading {
 	margin-top: 5px;
-	padding-top: 10px;
-	padding-bottom: 6px;
 	border-top: 1px solid #EEEEEE;
 	border-left: 1px solid #EEEEEE;
 	border-right: 1px solid #EEEEEE;
-	-webkit-border-radius: 7px 7px 0px 0px;
-	-moz-border-radius: 7px 7px 0px 0px;
-	-khtml-border-radius: 7px 7px 0px 0px;
-	border-radius: 7px 7px 0px 0px;
+	-webkit-border-radius: 3px 3px 0px 0px;
+	-moz-border-radius: 3px 3px 0px 0px;
+	-khtml-border-radius: 3px 3px 0px 0px;
+	border-radius: 3px 3px 0px 0px;
 }
 #header #cart.active .content {
 	display: block;
@@ -359,7 +359,7 @@ label {
 	height: 70px;
 	margin-bottom: 15px;
 	width: 1000px;
-	margin: -42px auto;
+	margin: -45px auto;
 	float: left;
 	background: url('../image/header_shape.png') no-repeat;
 }

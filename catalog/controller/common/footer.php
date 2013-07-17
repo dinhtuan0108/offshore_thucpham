@@ -17,6 +17,7 @@ class ControllerCommonFooter extends Controller {
 		$this->data['text_order'] = $this->language->get('text_order');
 		$this->data['text_wishlist'] = $this->language->get('text_wishlist');
 		$this->data['text_newsletter'] = $this->language->get('text_newsletter');
+		$this->data['text_categories'] = $this->language->get('text_categories');
 		
 		$this->load->model('catalog/information');
 		
@@ -44,6 +45,38 @@ class ControllerCommonFooter extends Controller {
 		$this->data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');		
 
 		$this->data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+		
+		//category list
+		$this->language->load('module/category');
+
+		$parts = array();
+		
+
+		$categories = $this->model_catalog_category->getCategories(0);
+
+		foreach ($categories as $category) {
+			$this->data['categories'][] = array(
+				'category_id' => $category['category_id'],
+				'name'        => $category['name'],
+				'href'        => $this->url->link('product/category', 'path=' . $category['category_id'])
+			);	
+		}
+		
+		//contact information
+    	$this->data['text_location'] = $this->language->get('text_location');
+		$this->data['text_contact'] = $this->language->get('text_contact');
+		$this->data['text_address'] = $this->language->get('text_address');
+    	$this->data['text_telephone'] = $this->language->get('text_telephone');
+    	$this->data['text_fax'] = $this->language->get('text_fax');
+
+    	$this->data['entry_name'] = $this->language->get('entry_name');
+    	$this->data['entry_email'] = $this->language->get('entry_email');
+
+    
+		$this->data['store'] = $this->config->get('config_name');
+    	$this->data['address'] = nl2br($this->config->get('config_address'));
+    	$this->data['telephone'] = $this->config->get('config_telephone');
+    	$this->data['fax'] = $this->config->get('config_fax');
 		
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
