@@ -739,6 +739,7 @@ a.button:hover, input.button:hover {
 }
 .box-product > div {
 	width: 178px;
+	min-height: 178px;
 	display: inline-block;
 	vertical-align: top;
 	margin-right: 20px;
@@ -1947,4 +1948,8 @@ ul.hotline li.b {
 }
 .content-bottom .box-heading, .content-bottom .box-content {
 	border: none;
+}
+.content-bottom .box-product img {
+	border: 1px solid #EDEDED;
+	border-radius: 3px;
 }
