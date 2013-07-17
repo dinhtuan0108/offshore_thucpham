@@ -2,7 +2,7 @@ config.php
 admin/config.php
 
 !index.html
-
+.settings
 download
 image/cache/*.jpg
 image/cache/data/*
