@@ -1953,3 +1953,9 @@ ul.hotline li.b {
 	border: 1px solid #EDEDED;
 	border-radius: 3px;
 }
+/*slideshow*/
+.slideshow {
+	border-radius: 5px;
+	overflow: hidden;
+	height: 388px;
+}
