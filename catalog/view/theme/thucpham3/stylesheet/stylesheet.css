@@ -120,8 +120,7 @@ label {
 	height: 68px;
 	float: left;
 	margin: 40px 0px;
-	border: 2px solid #B1C84D;
-	border-radius: 5px;
+	background: url('../image/hotline2.png') no-repeat;
 }
 #header #logo {
 	float: left;
