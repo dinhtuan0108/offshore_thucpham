@@ -3,12 +3,12 @@
 $_['heading_title']     = 'Tìm Kiếm';
  
 // Text
-$_['text_search']       = 'Sản phẩm thỏa điều kiện tìm kiếm';
+$_['text_search']       = 'Kết quả tìm kiếm';
 $_['text_keyword']      = 'Từ khóa';
 $_['text_category']     = 'Tất cả danh mục';
 $_['text_sub_category'] = 'Tìm trong danh mục con';
 $_['text_critea']       = 'Điều kiện tìm kiếm';
-$_['text_empty']        = 'Không có sản phẩm thỏa điều kiện tìm kiếm.';
+$_['text_empty']        = 'Không có kết quả phù hợp.';
 $_['text_quantity']     = 'Số lượng:';
 $_['text_manufacturer'] = 'Thương hiệu:';
 $_['text_model']        = 'Mã sản phẩm:'; 

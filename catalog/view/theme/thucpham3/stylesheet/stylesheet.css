@@ -96,7 +96,7 @@ label {
 #column-right + #content {
 	margin-right: 240px;
 }
-#content > div, #content > h1 {
+#content > div, #content > h1, #content > b, #content > h2{
 	margin: 10px;	
 }
 
@@ -1958,4 +1958,8 @@ ul.hotline li.b {
 	border-radius: 5px;
 	overflow: hidden;
 	height: 388px;
+}
+/*modified*/
+.highlight input {
+    margin-left: 0 !important;
 }
