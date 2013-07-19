@@ -43,7 +43,8 @@
 <div id="powered" >
 			<h5><?php echo $store; ?></h5>
 			
-			<b><?php echo $text_address ?></b> <?php echo $address; ?>
+			<b><?php echo $text_address ?></b><?php echo $address; ?>
+			<br />
 	        <?php if ($telephone) { ?>
 	        <b><?php echo $text_telephone; ?></b><?php echo $telephone; ?>	
 		    <?php } ?>
@@ -51,7 +52,7 @@
 	        <b><?php echo $text_fax; ?></b>
 	        <?php echo $fax; ?>
 	        <?php } ?><br />
-			<?php echo $powered; ?>. Powered by <a href="http://ecomwebpro.com" target="_blank" style="color: #FFF;">Ecomwebpro</a>
+			<?php echo $powered; ?>. Powered by <a href="http://ecomwebpro.com" target="_blank" style="color: #FFF;">EWP</a>
 	</div>
 </div>
 
