@@ -123,6 +123,7 @@ label {
 	float: left;
 	margin: 40px 0px;
 	background: url('../image/hotline2.png') no-repeat;
+	background-size: 256px 68px;
 }
 #header #logo {
 	float: left;
