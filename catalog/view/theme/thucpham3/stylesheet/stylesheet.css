@@ -782,6 +782,10 @@ a.button:hover, input.button:hover {
 .box-product .price + .cart {
 	margin-top: 30px;
 }
+.content-bottom .box-product .name {
+	height: 60px;
+	overflow: hidden;
+}
 /* box category */
 ul.box-category, ul.box-category ul {
 	list-style: none;
