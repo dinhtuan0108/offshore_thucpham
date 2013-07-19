@@ -779,6 +779,9 @@ a.button:hover, input.button:hover {
 	display: block;
 	margin-bottom: 4px;
 }
+.box-product .price + .cart {
+	margin-top: 30px;
+}
 /* box category */
 ul.box-category, ul.box-category ul {
 	list-style: none;
@@ -1067,6 +1070,8 @@ ul.box-filter > li ul {
 }
 .product-grid .name {
 	margin: 10px 10px 0px;
+	height: 60px;
+	overflow: hidden;
 }
 .product-grid .name a {
 	color: #38B0E3;

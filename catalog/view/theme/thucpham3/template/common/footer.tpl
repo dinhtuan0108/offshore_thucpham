@@ -36,26 +36,22 @@
 	      <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
 	    </ul>
 	  </div>
+	  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fecomwebpro&amp;width=1000&amp;height=208&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=401582569900520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:1000px; height:160px;" allowTransparency="true"></iframe>
 	</div>
+	
 </div>
 <div id="powered" >
-	<div class="row-fluid" style="width: 1000px; margin: 0 auto;">
-		<div class="span8" style="text-align: left;">
 			<h5><?php echo $store; ?></h5>
+			
 			<b><?php echo $text_address ?></b> <?php echo $address; ?>
-		 	<br />
 	        <?php if ($telephone) { ?>
-	        <b><?php echo $text_telephone; ?></b><?php echo $telephone; ?><br />	
+	        <b><?php echo $text_telephone; ?></b><?php echo $telephone; ?>	
 		    <?php } ?>
 	        <?php if ($fax) { ?>
 	        <b><?php echo $text_fax; ?></b>
 	        <?php echo $fax; ?>
-	        <?php } ?>
-			<?php echo $powered; ?>
-		</div>
-		<div class="span4">
-			<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fecomwebpro&amp;width=320&amp;height=178&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=401582569900520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:320px; height:178px; background-color: #FFF;" allowTransparency="true"></iframe>
-		</div>	
+	        <?php } ?><br />
+			<?php echo $powered; ?>. Powered by <a href="http://ecomwebpro.com" target="_blank" style="color: #FFF;">Ecomwebpro</a>
 	</div>
 </div>
 
