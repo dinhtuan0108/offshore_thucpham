@@ -16,7 +16,7 @@
 	        <?php echo $address; ?></div>
 	      <div class="right">
 	        <?php if ($telephone) { ?>
-	        <b><?php echo $text_telephone; ?></b><br />
+	        <b><?php // echo $text_telephone; ?>Hotline:</b><br />
 	        <?php echo $telephone; ?><br />
 	        <br />
 	        <?php } ?>

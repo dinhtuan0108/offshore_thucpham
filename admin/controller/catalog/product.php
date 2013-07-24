@@ -375,8 +375,8 @@ class ControllerCatalogProduct extends Controller {
 				'product_id' => $result['product_id'],
 				'name'       => $result['name'],
 				'model'      => $result['model'],
-				'price'      => $result['price'],
-				'special'    => $special,
+				'price'      => $result['price'] + 0, //remove decimal by duythanhdao@live.com
+				'special'    => $special + 0,
 				'image'      => $image,
 				'quantity'   => $result['quantity'],
 				'status'     => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
@@ -830,9 +830,9 @@ class ControllerCatalogProduct extends Controller {
 		}
 		
     	if (isset($this->request->post['price'])) {
-      		$this->data['price'] = $this->request->post['price'];
+      		$this->data['price'] = $this->request->post['price'] + 0;
     	} elseif (!empty($product_info)) {
-			$this->data['price'] = $product_info['price'];
+			$this->data['price'] = $product_info['price'] + 0;
 		} else {
       		$this->data['price'] = '';
     	}
