@@ -11,12 +11,17 @@
 	  <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
 	    <h2><?php echo $text_location; ?></h2>
 	    <div class="contact-info">
-	      <div class="content"><div class="left"><b><?php echo $text_address; ?></b><br />
-	        <?php echo $store; ?><br />
-	        <?php echo $address; ?></div>
+			<div class="content"><div class="left"><b><?php echo $text_address; ?></b><br />
+			<?php echo $store; ?><br />
+			<?php echo $address; ?><br />
+			<b>Thông tin tài khoản: </b><br />
+			<b>LÊ VĂN MẠNH</b><br />
+			<b>TK: 0451000247763</b> tại ngân hàng <b>VIETCOMBANK</b>
+			</div>
+	        
 	      <div class="right">
 	        <?php if ($telephone) { ?>
-	        <b><?php echo $text_telephone; ?></b><br />
+	        <b><?php // echo $text_telephone; ?>Hotline:</b><br />
 	        <?php echo $telephone; ?><br />
 	        <br />
 	        <?php } ?>

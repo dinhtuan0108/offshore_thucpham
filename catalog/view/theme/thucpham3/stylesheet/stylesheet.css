@@ -4,7 +4,7 @@ html {
 	padding: 0;
 }
 body {
-	background-color: #FFF;
+	background-color: #FCF9F9;
 	color: #000000;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
@@ -73,6 +73,7 @@ label {
 #content-wrapper {
 	width: 1000px;
 	margin: 40px auto;
+	background-color: #;
 }
 #column-left {
 	float: left;
@@ -89,6 +90,7 @@ label {
 	min-height: 400px;
 	border: 1px solid #EDEDED;
 	border-radius: 5px;
+	background: #FFF;
 }
 #column-left + #column-right + #content, #column-left + #content {
 	margin-left: 225px;
@@ -96,7 +98,7 @@ label {
 #column-right + #content {
 	margin-right: 240px;
 }
-#content > div, #content > h1 {
+#content > div, #content > h1, #content > b, #content > h2{
 	margin: 10px;	
 }
 
@@ -120,8 +122,8 @@ label {
 	height: 68px;
 	float: left;
 	margin: 40px 0px;
-	border: 2px solid #B1C84D;
-	border-radius: 5px;
+	background: url('../image/hotline2.png') no-repeat;
+	background-size: 256px 68px;
 }
 #header #logo {
 	float: left;
@@ -718,7 +720,7 @@ a.button:hover, input.button:hover {
 	font-weight: bold;
 	line-height: 14px;
 	color: #52A919;
-	background: none;
+	background: #FFF;
 	border-bottom: none;
 }
 .box .box-content {
@@ -779,6 +781,13 @@ a.button:hover, input.button:hover {
 .box-product .rating {
 	display: block;
 	margin-bottom: 4px;
+}
+.box-product .price + .cart {
+	margin-top: 30px;
+}
+.content-bottom .box-product .name {
+	height: 60px;
+	overflow: hidden;
 }
 /* box category */
 ul.box-category, ul.box-category ul {
@@ -1068,6 +1077,8 @@ ul.box-filter > li ul {
 }
 .product-grid .name {
 	margin: 10px 10px 0px;
+	height: 60px;
+	overflow: hidden;
 }
 .product-grid .name a {
 	color: #38B0E3;
@@ -1810,6 +1821,10 @@ span.grid-button, a.grid-button:hover {
 	border-radius: 5px;
 	margin-bottom: 20px;
 	margin-top: 0px !important;
+	-webkit-border-radius: 7px 
+	-moz-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	border-radius: 7px;
 }
 .banner div {
 	text-align: center;
@@ -1958,4 +1973,8 @@ ul.hotline li.b {
 	border-radius: 5px;
 	overflow: hidden;
 	height: 388px;
+}
+/*modified*/
+.highlight input {
+    margin-left: 0 !important;
 }
