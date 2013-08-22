@@ -719,9 +719,11 @@ a.button:hover, input.button:hover {
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 14px;
-	color: #52A919;
+	color: #FFF;
 	background: #FFF;
 	border-bottom: none;
+	background-color: #7ac024;
+	margin-top: 5px;
 }
 .box .box-content {
 	background: #FFFFFF;
@@ -1128,7 +1130,7 @@ ul.box-filter > li ul {
 	background: none;
 	padding: 9px;
 	height: auto;
-	background-color: #58B41C;
+	background-color: #7AC024;
 }
 .product-grid .wishlist, .product-grid .compare {
 	margin-bottom: 3px;
@@ -1832,7 +1834,7 @@ span.grid-button, a.grid-button:hover {
 	display: none;
 }
 .banner div img {
-	margin-bottom: 20px;
+	margin-bottom: 6px;
 }
 /*profile*/
 #profile {
@@ -1946,7 +1948,7 @@ ul.hotline li.b {
 .content-top {
 	width: 100%;
 	background-color: #F0F0F0;
-	height: 425px;
+	height: 405px;
 	margin-top: -40px;
 	padding-top: 40px;
 }
@@ -1955,7 +1957,7 @@ ul.hotline li.b {
 	margin: 0 auto;
 }
 .content-top #column-left {
-	width: 250px ;
+	width: 294px ;
 }
 .content-bottom {
 	width: 100%;

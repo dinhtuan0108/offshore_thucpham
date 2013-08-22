@@ -1,0 +1,27 @@
+<?php
+// HTTP
+define('HTTP_SERVER', 'http://thucphamkhoedep.tk/');
+
+// HTTPS
+define('HTTPS_SERVER', 'http://thucphamkhoedep.tk/');
+
+// DIR
+define('DIR_APPLICATION', '/var/www/html/thucphamkhoedep/catalog/');
+define('DIR_SYSTEM', '/var/www/html/thucphamkhoedep/system/');
+define('DIR_DATABASE', '/var/www/html/thucphamkhoedep/system/database/');
+define('DIR_LANGUAGE', '/var/www/html/thucphamkhoedep/catalog/language/');
+define('DIR_TEMPLATE', '/var/www/html/thucphamkhoedep/catalog/view/theme/');
+define('DIR_CONFIG', '/var/www/html/thucphamkhoedep/ystem/config/');
+define('DIR_IMAGE', '/var/www/html/thucphamkhoedep/image/');
+define('DIR_CACHE', '/var/www/html/thucphamkhoedep/system/cache/');
+define('DIR_DOWNLOAD', '/var/www/html/thucphamkhoedep/download/');
+define('DIR_LOGS', '/var/www/html/thucphamkhoedep/system/logs/');
+
+// DB
+define('DB_DRIVER', 'mysql');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'ltt123');
+define('DB_DATABASE', 'offshore_thucpham');
+define('DB_PREFIX', 'oc_');
+?>
