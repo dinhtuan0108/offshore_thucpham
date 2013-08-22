@@ -36,7 +36,7 @@
 	      <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
 	    </ul>
 	  </div>
-	  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fecomwebpro&amp;width=1000&amp;height=208&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=401582569900520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:1000px; height:160px;" allowTransparency="true"></iframe>
+	  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FThucphamkhoedepcom%2F394844943960736&amp;width=1000&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=401582569900520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:1000px; height:160px;" allowTransparency="true"></iframe>
 	</div>
 	
 </div>
@@ -52,6 +52,8 @@
 	        <b><?php echo $text_fax; ?></b>
 	        <?php echo $fax; ?>
 	        <?php } ?><br />
+	        Website đang chạy thử nghiệm và chờ cấp phép của BVH - BTTT.
+	        <br />
 			<?php echo $powered; ?>. Powered by <a href="http://ecomwebpro.com" target="_blank" style="color: #FFF;">EWP</a>
 	</div>
 </div>
