@@ -80,6 +80,24 @@
                   <?php } ?>
                 </div></td>
             </tr>
+
+            <tr>
+				<td>Chuyên mục</td>
+				<td>
+					<select name="category_id">
+	                  <?php if (isset($category_id) && ($category_id == 1)) { ?>
+		                  <option value="1" selected="selected">Tin tức</option>
+		                  <option value="2">Khuyến mãi</option>
+	                  <?php } elseif(isset($category_id) && ($category_id == 2)) { ?>
+		                  <option value="2" selected="selected">Khuyến mãi</option>
+		                  <option value="1">Tin tức</option>
+	                  <?php } else { ?>
+		                  <option value="1" selected="selected">Tin tức</option>
+		                  <option value="2">Khuyến mãi</option>	                  	
+	                  <?php } ?>
+	                </select>
+				</td>
+			</tr>
             <tr>
               <td><?php echo $entry_keyword; ?></td>
               <td><input type="text" name="keyword" value="<?php echo $keyword; ?>" /></td>

@@ -9,6 +9,7 @@ class ControllerCommonSeoUrl extends Controller {
 		// Decode URL
 		if (isset($this->request->get['_route_'])) {
 			$parts = explode('/', $this->request->get['_route_']);
+			$urlParams = array();
 			
 			foreach ($parts as $part) {
 				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE keyword = '" . $this->db->escape($part) . "'");
@@ -39,10 +40,16 @@ class ControllerCommonSeoUrl extends Controller {
 						$this->request->get['news_id'] = $url[1];
 					}
 					
-					
 					$explodedUrl = explode('/', $query->row['query']);
+					$params = explode('&', $query->row['query']);
+					
 					if(count($explodedUrl) > 1){
-						$this->request->get['route'] = $query->row['query'];
+						$this->request->get['route'] = $params[0];
+					}
+					
+					parse_str($query->row['query'], $parse);
+					if(isset($parse['category_id'])){
+						$this->request->get['category_id'] = $parse['category_id'];
 					}
 					
 				} else {
@@ -62,7 +69,7 @@ class ControllerCommonSeoUrl extends Controller {
 				$this->request->get['route'] = 'product/news';
 			}
 			if (isset($this->request->get['route'])) {
-				return $this->forward($this->request->get['route']);
+				return $this->forward($this->request->get['route'], array('category_id' => 2));
 			}
 		}
 	}

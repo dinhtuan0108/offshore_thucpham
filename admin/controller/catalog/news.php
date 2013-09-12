@@ -89,7 +89,6 @@ class ControllerCatalogNews extends Controller {
 		$this->data['categories'] = array();
 		
 		$results = $this->model_catalog_news->getCategories(0);
-
 		foreach ($results as $result) {
 			$action = array();
 			
@@ -103,7 +102,8 @@ class ControllerCatalogNews extends Controller {
 				'name'        => $result['name'],
 				'sort_order'  => $result['sort_order'],
 				'selected'    => isset($this->request->post['selected']) && in_array($result['news_id'], $this->request->post['selected']),
-				'action'      => $action
+				'action'      => $action,
+				'category_id' => $result['category_id']
 			);
 		}
 		
@@ -244,6 +244,11 @@ class ControllerCatalogNews extends Controller {
 			$this->data['parent_id'] = $news_info['parent_id'];
 		} else {
 			$this->data['parent_id'] = 0;
+		}
+		
+		//added by thanhdd@ecomwebpro.com
+		if(isset($news_info['category_id'])) {
+			$this->data['category_id'] = $news_info['category_id'];
 		}
 						
 		$this->load->model('setting/store');

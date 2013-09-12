@@ -1,7 +1,14 @@
 <?php
 class ModelCatalogNews extends Model {
 	public function addNews($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET parent_id = '" . (int)$data['parent_id'] . "', `top` = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "', `column` = '" . (int)$data['column'] . "', sort_order = '" . (int)$data['sort_order'] . "', status = '" . (int)$data['status'] . "', date_modified = NOW(), date_added = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "news SET parent_id = '" .
+	 		(int)$data['parent_id'] . "', `top` = '" . 
+	 		(isset($data['top']) ? (int)$data['top'] : 0) . 
+			 "', `column` = '" . (int)$data['column'] . 
+			 "', sort_order = '" . (int)$data['sort_order'] . 
+			 "', status = '" . (int)$data['status'] . 
+			 "', category_id = '" . (int)$data['category_id'] .
+			 "', date_modified = NOW(), date_added = NOW()");
 	
 		$news_id = $this->db->getLastId();
 		
@@ -40,7 +47,7 @@ class ModelCatalogNews extends Model {
 	}
 	
 	public function editnews($news_id, $data) {
-		$this->db->query("UPDATE " . DB_PREFIX . "news SET parent_id = '" . (int)$data['parent_id'] . "', `top` = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "', `column` = '" . (int)$data['column'] . "', sort_order = '" . (int)$data['sort_order'] . "', status = '" . (int)$data['status'] . "', date_modified = NOW() WHERE news_id = '" . (int)$news_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "news SET parent_id = '" . (int)$data['parent_id'] . "', `top` = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "', `column` = '" . (int)$data['column'] . "', sort_order = '" . (int)$data['sort_order'] . "', category_id = '" . (int)$data['category_id'] . "', status = '" . (int)$data['status'] . "', date_modified = NOW() WHERE news_id = '" . (int)$news_id . "'");
 
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "news SET image = '" . $this->db->escape($data['image']) . "' WHERE news_id = '" . (int)$news_id . "'");
@@ -119,7 +126,8 @@ class ModelCatalogNews extends Model {
 					'news_id' => $result['news_id'],
 					'name'        => $this->getPath($result['news_id'], $this->config->get('config_language_id')),
 					'status'  	  => $result['status'],
-					'sort_order'  => $result['sort_order']
+					'sort_order'  => $result['sort_order'],
+					'category_id' => $result['category_id']
 				);
 			
 				$news_data = array_merge($news_data, $this->getCategories($result['news_id']));

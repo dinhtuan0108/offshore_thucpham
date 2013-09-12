@@ -44,12 +44,19 @@ class ControllerNewsNews extends Controller {
 			'href'      => $this->url->link('news/news'),
        		'separator' => $this->language->get('text_separator')
    		);
-
+		
+		if (isset($this->request->get['category_id'])) {
+			$category_id = $this->request->get['category_id'];
+		} else {
+			$category_id = 1;
+		}
+		
 		$data = array(
 			'sort'               => $sort,
 			'order'              => $order,
 			'start'              => ($page - 1) * $limit,
-			'limit'              => $limit
+			'limit'              => $limit,
+			'category_id'		 => $category_id 
 		);	
 		$news_total = $this->model_catalog_news->getTotalNewes($data);
 
@@ -61,6 +68,12 @@ class ControllerNewsNews extends Controller {
 //			$this->document->setKeywords($news_info['meta_keyword']);
 			
 			$this->data['heading_title'] = $this->language->get('heading_title');
+			
+			if (isset($this->request->get['category_id']) && ($this->request->get['category_id'] == 2)) {
+				$this->data['heading_title'] = 'Tin khuyến mãi';
+				$this->document->setTitle('Tin khuyến mãi');
+			}
+			
 			$this->data['text_sort'] = $this->language->get('text_sort');
 			$this->data['text_limit'] = $this->language->get('text_limit');
 			
@@ -101,7 +114,10 @@ class ControllerNewsNews extends Controller {
 			$pagination->limit = $limit;
 			$pagination->text = $this->language->get('text_pagination');
 			$pagination->url = $this->url->link('news/news', 'page={page}');
-		
+			if (isset($this->request->get['category_id'])) {
+				$category_id = $this->request->get['category_id'];
+				$pagination->url = $this->url->link('news/news', 'page={page}&category_id=' . $category_id);	
+			}
 			$this->data['pagination'] = $pagination->render();
 		
 			$this->data['sort'] = $sort;

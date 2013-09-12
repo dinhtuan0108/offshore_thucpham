@@ -54,7 +54,7 @@ class ModelCatalognews extends Model {
 	public function getTotalNewes($data){
 		$string = "SELECT c.news_id, c.date_added, cd.name, cd.description FROM " . DB_PREFIX . "news c ";
 		$string .= "LEFT JOIN " . DB_PREFIX . "news_description cd ON (c.news_id = cd.news_id) ";
-		$string .= "WHERE c.status='1' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' ";
+		$string .= "WHERE c.status='1' AND cd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND category_id = '" . $data['category_id'] . "'";
 		$string .= " ORDER BY c.date_added DESC LIMIT " . (int)$data['start'] . "," . (int)$data['limit'] . "";
 
 		$query = $this->db->query($string);

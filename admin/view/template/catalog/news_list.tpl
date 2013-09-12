@@ -21,10 +21,11 @@
         <table class="list">
           <thead>
             <tr>
-              <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
-              <td class="left"><?php echo $column_name; ?></td>
-              <td class="right"><?php echo $column_sort_order; ?></td>
-              <td class="right"><?php echo $column_action; ?></td>
+				<td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
+				<td class="left"><?php echo $column_name; ?></td>
+				<td class="right">Chuyên mục</td>
+				<td class="right"><?php echo $column_sort_order; ?></td>
+				<td class="right"><?php echo $column_action; ?></td>
             </tr>
           </thead>
           <tbody>
@@ -37,6 +38,17 @@
                 <input type="checkbox" name="selected[]" value="<?php echo $news['news_id']; ?>" />
                 <?php } ?></td>
               <td class="left"><?php echo $news['name']; ?></td>
+              <td class="right">
+					<?php
+						$cat = array(
+							'1' => 'Tin tức',
+							'2' => 'Khuyến mãi'
+						);
+						if(isset($news['category_id']) && key_exists($news['category_id'], $cat)) {
+							echo $cat[$news['category_id']];
+						}
+					?>
+			  </td>
               <td class="right"><?php echo $news['sort_order']; ?></td>
               <td class="right"><?php foreach ($news['action'] as $action) { ?>
                 [ <a href="<?php echo $action['href']; ?>"><?php echo $action['text']; ?></a> ]
